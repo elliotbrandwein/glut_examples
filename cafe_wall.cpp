@@ -13,7 +13,7 @@ void draw_square(int deltaX, int deltaY)
 void draw_line(int deltaY)
 {
 	glColor4f(0.6,0.6,0.6,0.0);
-	for(int x = 0; x<400; x++)
+	for(int x = 0; x<401; x++)
 		{
 			glVertex2i(x,45+deltaY);
 		}
@@ -42,7 +42,7 @@ void display(void){
 			move_y+= 41;
 		}
 
-		if (move_x>= 400 || move_y >=400 ){
+		if (move_x>= 401 || move_y >=400 ){
 			keep = false;
 		}
 		if( wobble % 6 == 0)move_x+=10;
