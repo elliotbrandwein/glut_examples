@@ -2,6 +2,7 @@
 // hering illisuon ( two lines with many coming out of the center. )
 
 
+// this will draw one of the many lines going through the big two parallell lines
 void draw_line(int y)
 {
 	glBegin(GL_LINE_STRIP);	
@@ -14,17 +15,9 @@ void draw_line(int y)
 void display(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-
-	// draws the two big parallel lines
-	
-	
-	
-
-	// draws the lines going through the two big parallel lines
-
-	
 	glColor4f(0.0,0.0,1.0,0.0); // blue
 
+	// draws the lines that cross the image
 	for( int y = 0; y <800 ; y+=50)
 	{
 		draw_line(y);
@@ -33,6 +26,8 @@ void display(void){
 	}
 		glColor4f(1.0,0.0,0.0,0.0);	// red
 		
+
+	// this will draw the two parrallel lines	
 	int Y_DIFF = 100;
 		for (int y = 0; y<6; y++ )
 	{
@@ -49,6 +44,7 @@ void display(void){
 		glEnd();
 	}	
 	
+	// end of code
 	glFlush();
 	
 }
@@ -64,3 +60,4 @@ glutDisplayFunc(display);
 glutMainLoop(); 
 return 0;
 }
+// Elliot Brandwein

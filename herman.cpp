@@ -1,5 +1,7 @@
 #include <GL/glut.h>
 // herman illusion, 5x5 grid. 
+
+// this draws eact square, pixel by pixel
 void draw_square(int deltaX, int deltaY)
 {
 	for ( int x = 10+ deltaX; x< 60+deltaX;x++)
@@ -10,6 +12,7 @@ void draw_square(int deltaX, int deltaY)
 		}
 	}		
 }
+// main dispaly method. 
 void display(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor4f(0.0,0.0,0.0,0.0);	
@@ -17,16 +20,20 @@ void display(void){
 	bool keep = true;
 	int move_x = 30;
 	int move_y = 30;
+	// main drawing loop
 	while(keep)
 	{
+		// draw square 
 		draw_square(move_x, move_y);
+		// move down a collunm 
 		move_x += 60;
+		// if i'm at end of col, move up a row
 		if ( move_x >=300)
 		{
 			move_x = 30;
 			move_y+= 60;
 		}
-
+		// if I am too far off the image, I know I'm done. 
 		if (move_x>= 300 || move_y >=300 ){
 			keep = false;
 		} 
@@ -48,3 +55,5 @@ glutDisplayFunc(display);
 glutMainLoop(); 
 return 0;
 }
+
+//Elliot Brandwein
